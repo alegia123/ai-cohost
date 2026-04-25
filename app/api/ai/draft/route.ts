@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+
+export const dynamic = "force-dynamic";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { openai } from "@/lib/openai/client";
 import { buildGuestDraftPrompt } from "@/lib/ai/prompt";
