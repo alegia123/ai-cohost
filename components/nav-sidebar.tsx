@@ -8,6 +8,7 @@ import {
   FileInput,
   Inbox,
   LayoutDashboard,
+  Settings,
 } from "lucide-react";
 
 const navItems = [
@@ -15,6 +16,7 @@ const navItems = [
   { href: "/inbox",      label: "Inbox",       icon: Inbox },
   { href: "/import",     label: "Import",      icon: FileInput },
   { href: "/properties", label: "Properties",  icon: Building2 },
+  { href: "/settings",   label: "Settings",    icon: Settings },
 ];
 
 export function NavSidebar() {
