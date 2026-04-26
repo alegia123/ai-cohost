@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-
-export const dynamic = "force-dynamic";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
-import { openai } from "@/lib/openai/client";
 import { buildGuestDraftPrompt } from "@/lib/ai/prompt";
 import { DraftResponseSchema } from "@/lib/ai/types";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request: NextRequest) {
+  // Lazy import so the OpenAI client is never instantiated at build time
+  const { openai } = await import("@/lib/openai/client");
   const body = await request.json();
   const { guest_message_id } = body as { guest_message_id?: string };
 
